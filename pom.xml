@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.azam.ulidj</groupId>
   <artifactId>ulidj</artifactId>
-  <version>1.0.4</version>
+  <version>2.0.0</version>
   <name>ulidj</name>
   <description>ULID (Universally Unique Lexicographically Sortable Identifier) generator and parser for Java.</description>
   <url>https://github.com/azam/ulidj</url>
@@ -42,14 +42,13 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.lineEnding>LF</project.build.lineEnding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.release>17</maven.compiler.release>
   </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.1</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -58,12 +57,12 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.6.0</version>
+        <version>3.14.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-        <version>3.0.1</version>
+        <version>3.3.1</version>
         <executions>
           <execution>
             <id>attach-sources</id>
@@ -76,11 +75,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.4</version>
-        <configuration>
-          <!-- Setting this to 7 removes unnamed modules found warnings -->
-          <source>7</source>
-        </configuration>
+        <version>3.11.2</version>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -94,7 +89,7 @@
         <groupId>net.revelc.code.formatter</groupId>
         <artifactId>formatter-maven-plugin</artifactId>
         <!-- Sticking to this version as it is the latest that supports JDK8 -->
-        <version>2.16.0</version>
+        <version>2.26.0</version>
         <configuration>
           <configFile>${project.basedir}/eclipse-java-google-style.xml</configFile>
           <encoding>${project.build.sourceEncoding}</encoding>
@@ -117,7 +112,7 @@
       <plugin>
         <groupId>au.com.acegi</groupId>
         <artifactId>xml-format-maven-plugin</artifactId>
-        <version>3.2.2</version>
+        <version>4.1.0</version>
         <configuration>
           <indentSize>2</indentSize>
         </configuration>

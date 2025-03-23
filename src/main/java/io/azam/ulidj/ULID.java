@@ -299,9 +299,9 @@ public class ULID {
       return false;
     }
     for (int i = 0; i < ULID_LENGTH; i++) {
-      /** We only care for chars between 0x00 and 0xff. */
+      // We only care for chars between 0x00 and 0xff.
       char c = ulid.charAt(i);
-      if (c < 0 || c > V.length || V[c] == (byte) 0xff) {
+      if (c > V.length || V[c] == (byte) 0xff) {
         return false;
       }
     }
@@ -348,7 +348,7 @@ public class ULID {
    * @return Unix epoch timestamp in millisecond
    */
   public static long getTimestampBinary(byte[] ulid) {
-    long timestamp = (long) ulid[0];
+    long timestamp = ulid[0];
     timestamp = (timestamp << 8) | ulid[1] & 0xff;
     timestamp = (timestamp << 8) | ulid[2] & 0xff;
     timestamp = (timestamp << 8) | ulid[3] & 0xff;
@@ -409,7 +409,7 @@ public class ULID {
   }
 
   /**
-   * Convert a valid ULID string to it's binary representation. Call
+   * Convert a valid ULID string to its binary representation. Call
    * {@link io.azam.ulidj.ULID#isValid(CharSequence)} and check validity before calling this method
    * if you do not trust the origin of the ULID string.<br>
    * <br>
